@@ -4,11 +4,27 @@ const cors = require("cors");
 
 const app = express();
 
+// Allow localhost + CORS_ORIGIN env var + Vercel/Render origins so deployment works without env
+var allowedOrigins = process.env.CORS_ORIGIN
+  ? process.env.CORS_ORIGIN.split(",").map((o) => o.trim()).filter(Boolean)
+  : [];
+
+function isAllowedOrigin(origin) {
+  if (!origin) return true; // same-origin or non-browser
+  if (allowedOrigins.indexOf(origin) !== -1) return true;
+  if (origin === "http://localhost:8081" || origin === "http://127.0.0.1:8081") return true;
+  if (origin.endsWith(".vercel.app") || origin.endsWith(".onrender.com")) return true;
+  return false;
+}
+
 var corsOptions = {
-  origin: process.env.CORS_ORIGIN
-    ? process.env.CORS_ORIGIN.split(",").map((o) => o.trim())
-    : "http://localhost:8081",
+  origin: function (origin, callback) {
+    callback(null, isAllowedOrigin(origin));
+  },
   credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "x-access-token", "Authorization"],
+  optionsSuccessStatus: 204,
 };
 
 app.use(cors(corsOptions));
