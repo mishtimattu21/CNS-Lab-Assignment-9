@@ -243,7 +243,7 @@ Open **http://localhost:8081** in the browser to use the application.
 ## References
 
 - [JWT.io – Introduction to JSON Web Tokens](https://jwt.io/introduction)
-- [Node.js JWT Authentication example (Bezkoder)](https://bezkoder.com/node-js-jwt-authentication-mysql/)
+- [Node.js JWT Authentication example (Mishti)](https://Mishti.com/node-js-jwt-authentication-mysql/)
 
 ---
 
