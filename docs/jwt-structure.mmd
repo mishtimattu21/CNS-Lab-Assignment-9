@@ -1,0 +1,26 @@
+%% JWT Structure - Three parts
+%% File: docs/jwt-structure.mmd
+flowchart LR
+    subgraph JWT["JWT (single string)"]
+        direction LR
+        H[Header] --> P[Payload] --> S[Signature]
+    end
+
+    subgraph Header["Header (base64url)"]
+        H1[alg: HS256]
+        H2[typ: JWT]
+    end
+
+    subgraph Payload["Payload / Claims (base64url)"]
+        P1[id: user id]
+        P2[iat: issued at]
+        P3[exp: expiry]
+    end
+
+    subgraph Signature["Signature"]
+        S1[HMAC-SHA256\nheader + payload + secret]
+    end
+
+    H -.-> Header
+    P -.-> Payload
+    S -.-> Signature

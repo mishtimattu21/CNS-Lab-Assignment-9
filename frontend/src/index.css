@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 25% 97%;
+    --foreground: 28 12% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 28 12% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 28 12% 20%;
+
+    --primary: 25 65% 48%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 40 22% 93%;
+    --secondary-foreground: 28 12% 20%;
+
+    --muted: 40 18% 93%;
+    --muted-foreground: 28 10% 45%;
+
+    --accent: 25 65% 48%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 65% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 35 18% 90%;
+    --input: 35 18% 90%;
+    --ring: 25 65% 48%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 36 33% 97%;
+    --sidebar-foreground: 24 10% 18%;
+    --sidebar-primary: 24 70% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 36 20% 92%;
+    --sidebar-accent-foreground: 24 10% 18%;
+    --sidebar-border: 24 15% 88%;
+    --sidebar-ring: 24 70% 45%;
+
+    --font-heading: 'DM Sans', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-heading);
+    font-size: 15px;
+    line-height: 1.65;
+    letter-spacing: 0.01em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    letter-spacing: -0.025em;
+  }
+
+  input, select, textarea, code {
+    font-family: var(--font-mono);
+  }
+}
+
+@layer components {
+  .card-surface {
+    @apply rounded-2xl border border-border/50 bg-card shadow-lg shadow-black/[0.04];
+  }
+  .input-ring {
+    @apply focus:ring-2 focus:ring-primary/20 focus:border-primary/50;
+  }
+  .section-heading {
+    @apply font-heading text-sm font-semibold tracking-tight text-foreground;
+  }
+}

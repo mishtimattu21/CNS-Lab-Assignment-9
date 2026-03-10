@@ -1,0 +1,21 @@
+%% JWT Request Sequence - Client, Server, Database
+%% File: docs/jwt-request-sequence.mmd
+sequenceDiagram
+    participant C as Client (Browser)
+    participant S as Server (Express)
+    participant D as Database (Supabase)
+
+    Note over C,D: Sign In
+    C->>S: POST /api/auth/signin (username, password)
+    S->>D: Find user, verify password
+    D-->>S: User + roles
+    S->>S: Sign JWT (id, secret, expiry)
+    S-->>C: 200 + accessToken, id, username, email, roles
+
+    Note over C,D: Protected Request
+    C->>S: GET /api/test/user + Header: x-access-token: JWT
+    S->>S: Verify JWT signature & exp
+    S->>D: Load user roles by decoded id
+    D-->>S: Roles
+    S->>S: Check role (if required)
+    S-->>C: 200 + response (or 403)

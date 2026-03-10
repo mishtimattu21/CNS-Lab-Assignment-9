@@ -1,0 +1,9 @@
+%% JWT Authentication Flow - High-level flowchart
+%% File: docs/jwt-auth-flow.mmd
+flowchart LR
+    A[User Signs In] --> B[Server Validates]
+    B --> C[Server Signs JWT]
+    C --> D[Client Stores Token]
+    D --> E[Client Sends Token in Header]
+    E --> F[Server Verifies JWT]
+    F --> G[Allow or Deny Request]

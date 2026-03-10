@@ -1,0 +1,26 @@
+%% Project structure - Application layers
+%% File: docs/project-structure.mmd
+flowchart TB
+    subgraph Frontend["Frontend (React + Vite)"]
+        UI[Pages & Components]
+        API[API Client]
+        AUTH[Auth Context]
+        UI --> API
+        UI --> AUTH
+        API --> AUTH
+    end
+
+    subgraph Backend["Backend (Node + Express)"]
+        R[Routes]
+        MW[Middleware: authJwt]
+        CTRL[Controllers]
+        R --> MW
+        MW --> CTRL
+    end
+
+    subgraph Data["Data"]
+        DB[(Supabase / PostgreSQL)]
+        CTRL --> DB
+    end
+
+    API -->|"HTTP + x-access-token"| R
