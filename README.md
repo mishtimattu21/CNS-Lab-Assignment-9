@@ -39,12 +39,12 @@ This project implements:
 
 The following Mermaid diagram sources are included in this repo. You can render them on [Mermaid Live](https://mermaid.live) or in any Markdown viewer that supports Mermaid (e.g. GitHub).
 
-| Diagram | File in repo | Description |
-|---------|----------------|-------------|
-| **JWT Auth Flow** | `docs/jwt-auth-flow.mmd` | High-level flowchart: sign in → token → verify. |
-| **JWT Request Sequence** | `docs/jwt-request-sequence.mmd` | Sequence diagram: Client ↔ Server ↔ Database. |
-| **JWT Structure** | `docs/jwt-structure.mmd` | JWT three parts: header, payload, signature. |
-| **Project Structure** | `docs/project-structure.mmd` | Application layers: Frontend, Backend, Data. |
+| Diagram | Description |
+|---------|-------------|
+| **JWT Auth Flow** | High-level flowchart: sign in → token → verify. |
+| **JWT Request Sequence** | Sequence diagram: Client ↔ Server ↔ Database. |
+| **JWT Structure** | JWT three parts: header, payload, signature. |
+| **Project Structure** | Application layers: Frontend, Backend, Data. |
 
 ### 1. JWT authentication flow
 
@@ -245,3 +245,8 @@ Open **http://localhost:8081** in the browser to use the application.
 - [JWT.io – Introduction to JSON Web Tokens](https://jwt.io/introduction)
 - [Node.js JWT Authentication example (Bezkoder)](https://bezkoder.com/node-js-jwt-authentication-mysql/)
 - [Mermaid – Diagram and flowchart documentation](https://mermaid.js.org/)
+
+---
+
+**Name:** Mishti Mattu  
+**Registration Number:** 23BCE1067
