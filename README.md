@@ -7,7 +7,7 @@ A full-stack **web application that implements JSON Web Token (JWT)** for authen
 ## Table of Contents
 
 - [Overview](#overview)
-- [Diagrams (Mermaid)](#diagrams-mermaid)
+- [Diagrams](#diagrams)
 - [Features](#features)
 - [How JWT Is Used](#how-jwt-is-used)
 - [Tech Stack](#tech-stack)
@@ -35,9 +35,9 @@ This project implements:
 
 ---
 
-## Diagrams (Mermaid)
+## Diagrams
 
-The following Mermaid diagram sources are included in this repo. You can render them on [Mermaid Live](https://mermaid.live) or in any Markdown viewer that supports Mermaid (e.g. GitHub).
+The following flowcharts and sequence diagrams are included below.
 
 | Diagram | Description |
 |---------|-------------|
@@ -197,7 +197,7 @@ flowchart TB
 │       ├── context/     # AuthContext
 │       ├── lib/         # API client
 │       └── pages/       # Home, Profile, JWT Decoder, API Ref, Security
-├── docs/                # Mermaid diagram sources
+├── docs/                # Diagram sources
 │   ├── jwt-auth-flow.mmd
 │   ├── jwt-request-sequence.mmd
 │   ├── jwt-structure.mmd
@@ -244,7 +244,6 @@ Open **http://localhost:8081** in the browser to use the application.
 
 - [JWT.io – Introduction to JSON Web Tokens](https://jwt.io/introduction)
 - [Node.js JWT Authentication example (Bezkoder)](https://bezkoder.com/node-js-jwt-authentication-mysql/)
-- [Mermaid – Diagram and flowchart documentation](https://mermaid.js.org/)
 
 ---
 
