@@ -6,9 +6,13 @@ export default function Index() {
   const { user } = useAuth();
 
   return (
-    <div className="py-10 px-4">
-      <div className="mx-auto w-full max-w-xl card-surface p-8 md:p-10">
-        {user ? <Dashboard /> : <AuthPanel />}
+    <div className={`flex-1 flex flex-col min-h-0 ${user ? "py-6 px-4" : "py-6 px-4 flex items-center justify-center"}`}>
+      <div className={`mx-auto w-full flex-1 flex flex-col min-h-0 ${user ? "max-w-6xl overflow-hidden min-h-0" : "flex items-center justify-center"}`}>
+        {user ? <Dashboard /> : (
+          <div className="w-full max-w-sm">
+            <AuthPanel />
+          </div>
+        )}
       </div>
     </div>
   );

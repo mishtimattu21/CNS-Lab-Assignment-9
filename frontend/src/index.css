@@ -47,6 +47,11 @@
 
     --font-heading: 'DM Sans', system-ui, sans-serif;
     --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+    /* Scrollbar: brown / darkest beige */
+    --scrollbar-track: 35 20% 92%;
+    --scrollbar-thumb: 25 30% 28%;
+    --scrollbar-thumb-hover: 25 30% 22%;
   }
 }
 
@@ -86,4 +91,14 @@
   .section-heading {
     @apply font-heading text-sm font-semibold tracking-tight text-foreground;
   }
+}
+
+/* Invisible scrollbar: scroll still works (wheel, touch, trackpad) */
+* {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE / Edge */
+}
+
+*::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }

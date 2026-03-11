@@ -9,7 +9,7 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog";
-import { LogOut, User, Info, Shield, Home, LayoutDashboard, UserCircle, Key, BookOpen, Lock } from "lucide-react";
+import { LogOut, User, Info, Shield, Home, UserCircle, Key, BookOpen, Lock } from "lucide-react";
 
 const DETAILS_ITEMS: { label: string; value: string }[] = [
   { label: "Name", value: "Mishti Mattu" },
@@ -72,9 +72,6 @@ export default function Layout() {
             </Link>
             {user && (
               <>
-                <Link to="/dashboard" className={`px-2 py-1 rounded-lg ${location.pathname === "/dashboard" ? activeClass : navLinkClass}`}>
-                  <LayoutDashboard className="h-3.5 w-3.5 inline mr-1" /> Dashboard
-                </Link>
                 <Link to="/profile" className={`px-2 py-1 rounded-lg ${location.pathname === "/profile" ? activeClass : navLinkClass}`}>
                   <UserCircle className="h-3.5 w-3.5 inline mr-1" /> Profile
                 </Link>
@@ -161,8 +158,10 @@ export default function Layout() {
         </DialogContent>
       </Dialog>
 
-      <main className="flex-1 overflow-auto">
-        <Outlet />
+      <main className="flex-1 min-h-0 flex flex-col">
+        <div className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden flex flex-col">
+          <Outlet />
+        </div>
       </main>
 
       <footer className="border-t border-border/50 bg-muted/20 py-3 px-4 text-center text-xs text-muted-foreground">
